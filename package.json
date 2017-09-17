@@ -1,15 +1,18 @@
 {
-	"name": "guptafiles-server",
-	"version": "0.0.1",
-	"description": "Back end for guptafiles",
-	"main": "bin/server.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node bin/server.js"
-	},
-	"dependencies": {
-		"jexpress": "j-norwood-young/jexpress-2"
-	},
-	"author": "Jason Norwood-Young <jason@10layer.com>",
-	"license": "MIT"
+  "name": "guptafiles-server",
+  "version": "0.0.1",
+  "description": "Back end for guptafiles",
+  "main": "bin/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/server.js"
+  },
+  "dependencies": {
+    "config": "^1.26.2",
+    "jexpress": "j-norwood-young/jexpress-2",
+    "mongoose": "^4.11.11",
+    "mongoose-friendly": "^0.1.4"
+  },
+  "author": "Jason Norwood-Young <jason@10layer.com>",
+  "license": "MIT"
 }

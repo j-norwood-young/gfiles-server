@@ -3,6 +3,8 @@ var Schema       = mongoose.Schema;
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 var Mixed = mongoose.Schema.Types.Mixed;
+var User = require("./user_model");
+var Tag = require("./tag_model");
 
 var MetaSchema   = new Schema({
     filename: String,
@@ -21,7 +23,21 @@ var MetaSchema   = new Schema({
     company: {type: String, index: true},
     raw: Mixed,
     properties: Mixed,
-    location: Mixed
+    location: Mixed,
+    flags: [ {
+            user_id: { type: ObjectId, ref: "User", index: true, required: true },
+            date_created: { type: Date, default: Date.now },
+        }
+    ],
+    tags: [ { type: ObjectId, ref: "User", index: true, required: true } ],
+    notes: [
+        {
+            user_id: { type: ObjectId, ref: "User", index: true, required: true },
+            date_created: { type: Date, default: Date.now },
+            note: String
+        }
+    ],
+    body: String,
 });
 
 MetaSchema.set("_perms", {
